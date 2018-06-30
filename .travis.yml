@@ -11,7 +11,8 @@ script:
   - make test
 deploy:
   provider: script
-  script: chmod +x deploy.sh && ./deploy.sh
+  # script: chmod +x deploy.sh && ./deploy.sh
+  script: make docker-build && make docker-push
   skip_cleanup: true
   on:
     tags: true
