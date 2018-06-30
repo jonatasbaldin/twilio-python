@@ -11,9 +11,7 @@ script:
   - make test
 deploy:
   provider: script
-  script:
-    - make docker-build
-    - make docker-push
+  script: chmod +x deploy.sh deploy.sh
   on:
     tags: true
     python: "3.6"
