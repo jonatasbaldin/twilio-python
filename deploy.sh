@@ -1,6 +1,6 @@
 #!/bin/bash
 
-API_DEFINITIONS_SHA=$(git log --oneline | grep Regenerated | head -n1 | cut -d ' ' -f 5)
+export API_DEFINITIONS_SHA=$(git log --oneline | grep Regenerated | head -n1 | cut -d ' ' -f 5)
 # make docker-build
 # make docker-push
 
