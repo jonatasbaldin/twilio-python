@@ -53,6 +53,7 @@ docker-build:
 	docker tag jonatasbaldin/twilio-python jonatasbaldin/twilio-python:apidefs-${API_DEFINITIONS_SHA}
 
 docker-push:
-	docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
+	echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin
+	# docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
 	docker push jonatasbaldin/twilio-python:${TRAVIS_TAG}
 	docker push jonatasbaldin/twilio-python:apidefs-${API_DEFINITIONS_SHA}
